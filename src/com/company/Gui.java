@@ -7,7 +7,7 @@ public class Gui extends JFrame {
     private JButton button = new JButton("press");
     Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
-    ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("warship_middle.png"));
+    ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("w1.png"));
 
     GroupLayout layout;
 
@@ -36,7 +36,7 @@ public class Gui extends JFrame {
         int screenHeight = tk.getScreenSize().height;
         System.out.println(screenWidth);
         JLabel label = new JLabel(logo);
-        getContentPane().add(label).setBounds((screenWidth / 2) - 150,screenHeight / 7,256,256);
+        getContentPane().add(label).setBounds((screenWidth / 2) - 250,screenHeight / 15,457,301);
     }
 
     public void closeCodePanel()
