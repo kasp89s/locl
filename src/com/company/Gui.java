@@ -7,7 +7,7 @@ public class Gui extends JFrame {
     private JButton button = new JButton("press");
     Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
-    ImageIcon logo = new ImageIcon("src/warship_middle.png");
+    ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("warship_middle.png"));
 
     GroupLayout layout;
 

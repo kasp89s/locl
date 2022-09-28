@@ -131,7 +131,7 @@ public class Main {
 
     protected static void playSound(String timeLeft)
     {
-        new MP3Player(new File("src/" + timeLeft + "min.mp3")).play();
+        new MP3Player(Main.class.getResource("/resources/" + timeLeft + "min.mp3")).play();
     }
 
     public static String httpPostRequest(String url, String json) throws IOException, InterruptedException
