@@ -20,7 +20,7 @@ public class Gui extends JFrame {
         super("lock");
         getContentPane().setBackground(Color.BLACK);
 //        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        this.setAlwaysOnTop(true);
+//        this.setAlwaysOnTop(true);
         this.setResizable(false);
         this.setUndecorated(true);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);

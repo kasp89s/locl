@@ -1,5 +1,12 @@
 package com.company;
 
+import com.company.lib.EmailValidator;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import javax.swing.*;
+import java.io.IOException;
+
 public class RegisterForm extends javax.swing.JPanel {
 
     /**
@@ -22,8 +29,8 @@ public class RegisterForm extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         LoginInput = new javax.swing.JTextField();
         EmailInput = new javax.swing.JTextField();
-        PasswordInput = new javax.swing.JTextField();
-        ConfirmPasswordInput = new javax.swing.JTextField();
+        PasswordInput = new javax.swing.JPasswordField();
+        ConfirmPasswordInput = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -35,6 +42,8 @@ public class RegisterForm extends javax.swing.JPanel {
         PasswordError = new javax.swing.JLabel();
         ConfirmPasswordError = new javax.swing.JLabel();
 
+        PasswordError.setText("eewqeqwe");
+        ConfirmPasswordError.setText("eewqeqwe");
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Реестрація");
@@ -172,19 +181,106 @@ public class RegisterForm extends javax.swing.JPanel {
     }
 
     private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        String login = LoginInput.getText().trim();
+        String email = EmailInput.getText().trim();
+        String password = new String(PasswordInput.getPassword());
+        String passwordConfirm = new String(ConfirmPasswordInput.getPassword());
+        boolean hasErrors = false;
+
+        EmailValidator emailValidator = new EmailValidator();
+
+        if(!emailValidator.validate(email)) {
+            EmailError.setText("Помилкова почта");
+            hasErrors = true;
+        }
+
+        if (login.equals("")) {
+            LoginError.setText("Поле не заповнено");
+            hasErrors = true;
+        } else {
+            LoginError.setText("");
+        }
+        if (email.equals("")) {
+            EmailError.setText("Поле не заповнено");
+            hasErrors = true;
+        } else {
+            EmailError.setText("");
+        }
+        if (password.equals("")) {
+            PasswordError.setText("Поле не заповнено");
+            hasErrors = true;
+        } else {
+            PasswordError.setText("");
+        }
+        if (passwordConfirm.equals("")) {
+            ConfirmPasswordError.setText("Поле не заповнено");
+            hasErrors = true;
+        } else {
+            ConfirmPasswordError.setText("");
+        }
+
+        if (!password.equals(passwordConfirm)) {
+            PasswordError.setText("Паролі не зпівпадають");
+            ConfirmPasswordError.setText("");
+            hasErrors = true;
+        } else {
+            PasswordError.setText("");
+            ConfirmPasswordError.setText("");
+        }
+
+        if (hasErrors) {
+            return;
+        }
+
+        String jsonString = new JSONObject()
+                .put("login", login)
+                .put("email", email)
+                .put("password", password)
+                .toString();
+
+        try {
+            String response = Main.httpPostRequest(Main.RegisterEndpoint, jsonString);
+
+            try {
+                System.out.println(response);
+                JSONObject out = new JSONObject(response);
+
+                if (out.has("errors")) {
+                    JSONObject errors = out.getJSONObject("errors");
+
+                    if (errors.has("login")) {
+                        LoginError.setText(errors.get("login").toString());
+                    }
+                    if (errors.has("email")) {
+                        LoginError.setText(errors.get("email").toString());
+                    }
+                    if (errors.has("password")) {
+                        LoginError.setText(errors.get("password").toString());
+                    }
+                } else {
+
+                }
+            } catch (JSONException e) {
+                JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+            }
+//            System.out.println(out.get("timeLeft"));
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+        } catch (InterruptedException e) {
+            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+        }
     }
 
 
     // Variables declaration - do not modify
     private javax.swing.JLabel ConfirmPasswordError;
-    private javax.swing.JTextField ConfirmPasswordInput;
+    private javax.swing.JPasswordField ConfirmPasswordInput;
     private javax.swing.JLabel EmailError;
     private javax.swing.JTextField EmailInput;
     private javax.swing.JLabel LoginError;
     private javax.swing.JTextField LoginInput;
     private javax.swing.JLabel PasswordError;
-    private javax.swing.JTextField PasswordInput;
+    private javax.swing.JPasswordField PasswordInput;
     private javax.swing.JButton RegisterButton;
     private javax.swing.JButton ReturnLoginButton;
     private javax.swing.JLabel jLabel1;

@@ -32,6 +32,8 @@ public class Main {
 
     public static String UseTimeEndpoint = "/api/use-time";
 
+    public static String RegisterEndpoint = "/api/create";
+
     public static void main(String[] args) {
         lock = new Gui();
         gamePanel = new GamePanel();
