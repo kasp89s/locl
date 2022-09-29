@@ -15,6 +15,7 @@ public class Gui extends JFrame {
     LoginPanel loginPanel1;
     RegisterForm registerForm1;
     RecoveryPanel recoveryPanel1;
+    DepositPanel depositPanel1;
 
     public Gui () {
         super("lock");
@@ -73,7 +74,7 @@ public class Gui extends JFrame {
         this.loginPanel1.setVisible(false);
     }
 
-    public void displayLoginPanel()
+    public void displayLoginPanel(String login)
     {
         this.loginPanel1 = new LoginPanel();
 
@@ -95,6 +96,8 @@ public class Gui extends JFrame {
                                 .addComponent(this.loginPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 209, Short.MAX_VALUE))
         );
+
+        this.loginPanel1.LoginInput.setText(login);
     }
 
     public void displayRegisterPanel()
@@ -153,6 +156,35 @@ public class Gui extends JFrame {
     public void closeRecoveryPanel()
     {
         this.recoveryPanel1.setVisible(false);
+    }
+
+    public void displayDepositPanel()
+    {
+        this.depositPanel1 = new DepositPanel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        GroupLayout layout = new GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(171, Short.MAX_VALUE)
+                                .addComponent(this.depositPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 156, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(171, Short.MAX_VALUE)
+                                .addComponent(this.depositPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 213, Short.MAX_VALUE))
+        );
+    }
+
+    public void closeDepositPanel()
+    {
+        this.depositPanel1.setVisible(false);
     }
 
     // Variables declaration - do not modify

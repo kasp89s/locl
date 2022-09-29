@@ -42,8 +42,6 @@ public class RegisterForm extends javax.swing.JPanel {
         PasswordError = new javax.swing.JLabel();
         ConfirmPasswordError = new javax.swing.JLabel();
 
-        PasswordError.setText("eewqeqwe");
-        ConfirmPasswordError.setText("eewqeqwe");
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Реестрація");
@@ -177,7 +175,7 @@ public class RegisterForm extends javax.swing.JPanel {
     private void ReturnLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         Main.lock.closeRegisterPanel();
-        Main.lock.displayLoginPanel();
+        Main.lock.displayLoginPanel("");
     }
 
     private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,7 +227,7 @@ public class RegisterForm extends javax.swing.JPanel {
         }
 
         if (hasErrors) {
-            return;
+//            return;
         }
 
         String jsonString = new JSONObject()
@@ -252,18 +250,20 @@ public class RegisterForm extends javax.swing.JPanel {
                         LoginError.setText(errors.get("login").toString());
                     }
                     if (errors.has("email")) {
-                        LoginError.setText(errors.get("email").toString());
+                        EmailError.setText(errors.get("email").toString());
                     }
                     if (errors.has("password")) {
-                        LoginError.setText(errors.get("password").toString());
+                        PasswordError.setText(errors.get("password").toString());
                     }
                 } else {
+                    JSONObject player = out.getJSONObject("player");
 
+                    Main.lock.closeRegisterPanel();
+                    Main.lock.displayLoginPanel(player.getString("login"));
                 }
             } catch (JSONException e) {
                 JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
             }
-//            System.out.println(out.get("timeLeft"));
         } catch (IOException e) {
             JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
         } catch (InterruptedException e) {

@@ -31,6 +31,7 @@ public class CodePanel extends javax.swing.JPanel {
         CodeButton = new javax.swing.JButton();
         SwitchLoginButton = new javax.swing.JButton();
         CodeErrorMessage = new javax.swing.JLabel();
+        DepositButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -59,6 +60,15 @@ public class CodePanel extends javax.swing.JPanel {
 
         CodeErrorMessage.setForeground(new java.awt.Color(255, 0, 51));
 
+        DepositButton.setText("Поповнити");
+        DepositButton.setForeground(new java.awt.Color(255, 255, 255));
+        DepositButton.setContentAreaFilled(false);
+        DepositButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DepositButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -66,25 +76,32 @@ public class CodePanel extends javax.swing.JPanel {
                         .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGap(32, 32, 32)
-                                                .addComponent(CodeErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(71, 71, 71)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(CodeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(SwitchLoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(77, 77, 77)
-                                                .addComponent(jLabel1))
-                                        .addGroup(layout.createSequentialGroup()
                                                 .addContainerGap()
-                                                .addComponent(CodeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(SwitchLoginButton)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(DepositButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(77, 77, 77)
+                                                                .addComponent(jLabel1))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(CodeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(32, 32, 32)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addGroup(layout.createSequentialGroup()
+                                                                                .addGap(6, 6, 6)
+                                                                                .addComponent(CodeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                        .addComponent(CodeErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addContainerGap())
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(20, Short.MAX_VALUE)
+                                .addContainerGap(22, Short.MAX_VALUE)
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(CodeInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -93,7 +110,9 @@ public class CodePanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(CodeButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SwitchLoginButton)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(SwitchLoginButton)
+                                        .addComponent(DepositButton))
                                 .addGap(16, 16, 16))
         );
     }// </editor-fold>
@@ -131,7 +150,13 @@ public class CodePanel extends javax.swing.JPanel {
 
     private void SwitchLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Main.lock.closeCodePanel();
-        Main.lock.displayLoginPanel();
+        Main.lock.displayLoginPanel("");
+    }
+
+    private void DepositButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+        Main.lock.closeCodePanel();
+        Main.lock.displayDepositPanel();
     }
 
 
@@ -141,5 +166,6 @@ public class CodePanel extends javax.swing.JPanel {
     private javax.swing.JTextField CodeInput;
     private javax.swing.JButton SwitchLoginButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton DepositButton;
     // End of variables declaration
 }

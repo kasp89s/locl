@@ -22,6 +22,7 @@ public class Main {
 
     public static int TimeLeft;
     public static String CurrentCode;
+    public static String CurrentLogin;
 
     public static Gui lock;
     public static GamePanel gamePanel;
@@ -33,6 +34,8 @@ public class Main {
     public static String UseTimeEndpoint = "/api/use-time";
 
     public static String RegisterEndpoint = "/api/create";
+
+    public static String LoginEndpoint = "/api/auth-by-login";
 
     public static void main(String[] args) {
         lock = new Gui();
@@ -63,6 +66,20 @@ public class Main {
         if (timeLeft > 0) {
             TimeLeft = timeLeft;
             CurrentCode = response.get("code").toString();
+
+            gamePanel.setTimeLeft(String.valueOf(TimeLeft));
+
+            decrementTime();
+            showGamePanel();
+        }
+    }
+
+    public static void processLoginAuthResponse(JSONObject response) {
+        int timeLeft = (int) response.get("time");
+
+        if (timeLeft > 0) {
+            TimeLeft = timeLeft;
+            CurrentLogin = response.get("login").toString();
 
             gamePanel.setTimeLeft(String.valueOf(TimeLeft));
 
@@ -112,6 +129,7 @@ public class Main {
 
         String jsonString = new JSONObject()
                 .put("code", CurrentCode)
+                .put("login", CurrentLogin)
                 .put("time", TimeLeft)
                 .toString();
 

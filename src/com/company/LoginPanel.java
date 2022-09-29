@@ -1,5 +1,11 @@
 package com.company;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import javax.swing.*;
+import java.io.IOException;
+
 public class LoginPanel extends javax.swing.JPanel {
 
     /**
@@ -21,7 +27,7 @@ public class LoginPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         LoginInput = new javax.swing.JTextField();
-        PasswordInput = new javax.swing.JTextField();
+        PasswordInput = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         RegisterButton = new javax.swing.JButton();
@@ -154,13 +160,51 @@ public class LoginPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        String login = LoginInput.getText().trim();
+        String password = new String(PasswordInput.getPassword());
+
+        String jsonString = new JSONObject()
+                .put("login", login)
+                .put("password", password)
+                .toString();
+
+        try {
+            String response = Main.httpPostRequest(Main.LoginEndpoint, jsonString);
+
+            try {
+                System.out.println(response);
+                JSONObject out = new JSONObject(response);
+
+                if (out.has("errors")) {
+                    JSONObject errors = out.getJSONObject("errors");
+
+                    if (errors.has("error")) {
+                        ErrorLoginText.setText(errors.get("error").toString());
+                    }
+                } else {
+                    int timeLeft = (int) out.get("time");
+
+                    if (timeLeft == 0) {
+                        ErrorLoginText.setText("Час гры вичерпано");
+                    }
+
+                    Main.processLoginAuthResponse(out);
+                }
+            } catch (JSONException e) {
+                JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+        } catch (InterruptedException e) {
+            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+        }
     }
 
 
     // Variables declaration - do not modify
     private javax.swing.JLabel ErrorLoginText;
-    private javax.swing.JTextField LoginInput;
-    private javax.swing.JTextField PasswordInput;
+    public javax.swing.JTextField LoginInput;
+    private javax.swing.JPasswordField PasswordInput;
     private javax.swing.JButton RecoveryPassword;
     private javax.swing.JButton RegisterButton;
     private javax.swing.JButton ReturnCodeButton;

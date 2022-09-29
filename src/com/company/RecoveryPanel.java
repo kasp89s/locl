@@ -107,7 +107,7 @@ public class RecoveryPanel extends javax.swing.JPanel {
     private void ReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         Main.lock.closeRecoveryPanel();
-        Main.lock.displayLoginPanel();
+        Main.lock.displayLoginPanel("");
     }
 
 
