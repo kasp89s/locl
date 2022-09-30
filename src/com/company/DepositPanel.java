@@ -1,5 +1,11 @@
 package com.company;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import javax.swing.*;
+import java.io.IOException;
+
 public class DepositPanel extends javax.swing.JPanel {
 
     /**
@@ -132,6 +138,41 @@ public class DepositPanel extends javax.swing.JPanel {
 
     private void CodeButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        String login = LoginInput.getText().trim();
+        String code = CodeInput.getText().trim();
+
+        String jsonString = new JSONObject()
+                .put("login", login)
+                .put("code", code)
+                .toString();
+
+        try {
+            String response = Main.httpPostRequest(Main.DepositEndpoint, jsonString);
+
+            try {
+                System.out.println(response);
+                JSONObject out = new JSONObject(response);
+
+                if (out.has("errors")) {
+                    JSONObject errors = out.getJSONObject("errors");
+
+                    if (errors.has("error")) {
+                        ErrorMessage.setText(errors.get("error").toString());
+                    }
+                } else {
+                    JSONObject player = out.getJSONObject("player");
+
+                    Main.lock.closeDepositPanel();
+                    Main.lock.displayLoginPanel(player.getString("login"));
+                }
+            } catch (JSONException e) {
+                JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+        } catch (InterruptedException e) {
+            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+        }
     }
 
 

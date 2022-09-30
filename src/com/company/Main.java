@@ -36,6 +36,8 @@ public class Main {
     public static String RegisterEndpoint = "/api/create";
 
     public static String LoginEndpoint = "/api/auth-by-login";
+    public static String DepositEndpoint = "/api/deposit";
+    public static String RecoveryEndpoint = "/api/recovery-password";
 
     public static void main(String[] args) {
         lock = new Gui();
@@ -54,6 +56,7 @@ public class Main {
     public static void showLockPanel() {
         TimeLeft = 0;
         CurrentCode = "";
+        CurrentLogin = "";
         clearTimer();
 
         lock.setVisible(true);

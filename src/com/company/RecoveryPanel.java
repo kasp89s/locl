@@ -1,5 +1,11 @@
 package com.company;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import javax.swing.*;
+import java.io.IOException;
+
 public class RecoveryPanel extends javax.swing.JPanel {
 
     /**
@@ -102,6 +108,36 @@ public class RecoveryPanel extends javax.swing.JPanel {
 
     private void SendNewPasswordButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        String email = RecoveryEmailInput.getText().trim();
+
+        String jsonString = new JSONObject()
+                .put("email", email)
+                .toString();
+
+        try {
+            String response = Main.httpPostRequest(Main.RecoveryEndpoint, jsonString);
+
+            try {
+                System.out.println(response);
+                JSONObject out = new JSONObject(response);
+
+                if (out.has("errors")) {
+                    JSONObject errors = out.getJSONObject("errors");
+
+                    if (errors.has("email")) {
+                        RecoveryErrorMessage.setText(errors.get("email").toString());
+                    }
+                } else {
+                    RecoveryErrorMessage.setText("Новый пароль відправлено на почту");
+                }
+            } catch (JSONException e) {
+                JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+        } catch (InterruptedException e) {
+            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+        }
     }
 
     private void ReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {
