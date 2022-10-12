@@ -16,6 +16,7 @@ public class GamePanel extends javax.swing.JFrame {
         this.setResizable(false);
         this.setUndecorated(true);
         this.setBounds(0,0,screenWidth, screenHeight / 40);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         initComponents();
     }

@@ -20,12 +20,12 @@ public class Gui extends JFrame {
     public Gui () {
         super("lock");
         getContentPane().setBackground(Color.BLACK);
-//        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-//        this.setAlwaysOnTop(true);
+        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        this.setAlwaysOnTop(true);
         this.setResizable(false);
         this.setUndecorated(true);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack(); // Important line!!!
         initComponents();
         this.displayCodePanel();
@@ -49,7 +49,7 @@ public class Gui extends JFrame {
     {
         this.codePanel1 = new CodePanel();
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,7 +78,7 @@ public class Gui extends JFrame {
     {
         this.loginPanel1 = new LoginPanel();
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,7 +104,7 @@ public class Gui extends JFrame {
     {
         this.registerForm1 = new RegisterForm();
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,7 +133,7 @@ public class Gui extends JFrame {
     {
         this.recoveryPanel1 = new RecoveryPanel();
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,7 +162,7 @@ public class Gui extends JFrame {
     {
         this.depositPanel1 = new DepositPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -1,11 +1,10 @@
 package com.company;
 
+import com.company.lib.ComputerInfo;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import javax.swing.*;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -14,7 +13,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import jaco.mp3.player.MP3Player;
-import java.io.File;
 
 public class Main {
     public static Timer timer;
@@ -39,10 +37,14 @@ public class Main {
     public static String DepositEndpoint = "/api/deposit";
     public static String RecoveryEndpoint = "/api/recovery-password";
 
+    public static String Logout = "/api/logout";
+
     public static void main(String[] args) {
         lock = new Gui();
         gamePanel = new GamePanel();
 
+
+        System.out.println(ComputerInfo.getMacAddress());
 //        gamePanel.setVisible(true);
         lock.setVisible(true);
     }
@@ -54,6 +56,19 @@ public class Main {
     }
 
     public static void showLockPanel() {
+        String jsonString = new JSONObject()
+                .put("code", CurrentCode)
+                .put("login", CurrentLogin)
+                .toString();
+
+        try {
+            httpPostRequest(Logout, jsonString);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+
         TimeLeft = 0;
         CurrentCode = "";
         CurrentLogin = "";
