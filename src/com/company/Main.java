@@ -25,7 +25,7 @@ public class Main {
     public static Gui lock;
     public static GamePanel gamePanel;
 
-    public static String ApiDomain = "http://wars.local";
+    public static String ApiDomain = "http://2344322.ec473377.web.hosting-test.net";
 
     public static String CodeLoginEndpoint = "/api/auth-by-code";
 

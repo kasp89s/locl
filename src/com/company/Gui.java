@@ -20,12 +20,12 @@ public class Gui extends JFrame {
     public Gui () {
         super("lock");
         getContentPane().setBackground(Color.BLACK);
-        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+//        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setAlwaysOnTop(true);
         this.setResizable(false);
         this.setUndecorated(true);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack(); // Important line!!!
         initComponents();
         this.displayCodePanel();
