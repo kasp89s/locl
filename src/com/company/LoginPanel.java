@@ -191,12 +191,12 @@ public class LoginPanel extends javax.swing.JPanel {
                     Main.processLoginAuthResponse(out);
                 }
             } catch (JSONException e) {
-                JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+                ErrorLoginText.setText("Помилка");
             }
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+            ErrorLoginText.setText("Помилка");
         } catch (InterruptedException e) {
-            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), e.getMessage());
+            ErrorLoginText.setText("Помилка");
         }
     }
 
