@@ -4,7 +4,9 @@ import com.company.lib.ComputerInfo;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -47,6 +49,13 @@ public class Main {
         System.out.println(ComputerInfo.getMacAddress());
 //        gamePanel.setVisible(true);
         lock.setVisible(true);
+    }
+
+    public static void run(String[] command) throws IOException, InterruptedException {
+        ProcessBuilder builder = new ProcessBuilder(command);
+        Process process = builder.start();
+        // ждем завершения процесса
+//        process.waitFor();
     }
 
     public static void showGamePanel() {
