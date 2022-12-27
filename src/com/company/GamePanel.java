@@ -265,8 +265,8 @@ public class GamePanel extends javax.swing.JFrame {
         WarThunder.setBackground(new java.awt.Color(0, 0, 0));
         WarThunder.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         WarThunder.setForeground(new java.awt.Color(255, 255, 255));
-        WarThunder.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("war_128.png"))); // NOI18N
-        WarThunder.setText("WarThunder");
+        WarThunder.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("discord_128.png"))); // NOI18N
+        WarThunder.setText("Discord");
         WarThunder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         WarThunder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         WarThunder.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -705,7 +705,10 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "D:\\WarThunder\\launcher.exe"
+                    "C:\\Windows\\System32\\runas.exe",
+                    "/savecred",
+                    "/user:DESKTOP-VK1BTGH\\Administrator",
+                    "\"C:\\Game\\Discord\\app-1.0.9006\\Discord.exe\""
             };
             Main.run(params);
         } catch (IOException exception) {

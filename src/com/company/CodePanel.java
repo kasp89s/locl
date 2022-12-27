@@ -126,6 +126,7 @@ public class CodePanel extends javax.swing.JPanel {
             String response = Main.httpPostRequest(Main.CodeLoginEndpoint, jsonString);
 
             try {
+                System.out.println(response);
                 JSONObject out = new JSONObject(response);
 
                 int timeLeft = (int) out.get("timeLeft");
