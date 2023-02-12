@@ -594,10 +594,12 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "D:\\Riot Games\\Riot Client\\RiotClientServices.exe",
-                    "--launch-product=valorant",
-                    "--launch-patchline=live"
+                    "C:\\Windows\\System32\\runas.exe",
+                    "/savecred",
+                    "/user:DESKTOP-VK1BTGH\\Administrator",
+                    "\"D:\\Riot Games\\Riot Client\\RiotClientServices.exe --launch-product=valorant --launch-patchline=live\""
             };
+
             Main.run(params);
         } catch (IOException exception) {
         } catch (InterruptedException exception) {
@@ -618,9 +620,10 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "D:\\Riot Games\\Riot Client\\RiotClientServices.exe",
-                    "--launch-product=league_of_legends",
-                    "--launch-patchline=live"
+                    "C:\\Windows\\System32\\runas.exe",
+                    "/savecred",
+                    "/user:DESKTOP-VK1BTGH\\Administrator",
+                    "\"D:\\Riot Games\\Riot Client\\RiotClientServices.exe --launch-product=league_of_legends --launch-patchline=live\""
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -694,6 +697,7 @@ public class GamePanel extends javax.swing.JFrame {
         try {
             String[] params = {
                     "C:\\Game\\Crossout\\launcher.exe"
+//                    "D:\\Crossout\\launcher.exe"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -708,7 +712,7 @@ public class GamePanel extends javax.swing.JFrame {
                     "C:\\Windows\\System32\\runas.exe",
                     "/savecred",
                     "/user:DESKTOP-VK1BTGH\\Administrator",
-                    "\"C:\\Game\\Discord\\app-1.0.9006\\Discord.exe\""
+                    "\"C:\\Game\\Discord\\Update.exe --processStart Discord.exe\""
             };
             Main.run(params);
         } catch (IOException exception) {
