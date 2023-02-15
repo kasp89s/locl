@@ -21,10 +21,24 @@ import java.util.TimerTask;
 
 import jaco.mp3.player.MP3Player;
 
+import javax.swing.*;
+
 public class Main {
     private static final Set<String> ProcessesToDown = Set.of(
+            "D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\csgo.exe",
+            "D:\\steam\\bin\\cef\\cef.win7x64\\steamwebhelper.exe",
+            "D:\\steam\\steam.exe",
+            "D:\\steam\\GameOverlayUI.exe",
             "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
             "C:\\Users\\admin\\AppData\\Roaming\\Telegram Desktop\\Telegram.exe"
+    );
+
+    private static final Set<String> ProcessesNotDown = Set.of(
+            "C:\\Program Files\\Java\\jdk-19\\bin\\javaw.exe",
+            "C:\\Windows\\System32\\taskhostw.exe",
+            "C:\\Windows\\System32\\svchost.exe",
+            "C:\\Windows\\System32\\sihost.exe",
+            "C:\\Program Files\\NVIDIA Corporation\\NvContainer\\nvcontainer.exe"
     );
 
     public static boolean working = true;
@@ -61,7 +75,7 @@ public class Main {
         System.out.println(ComputerInfo.getMacAddress());
 //        gamePanel.setVisible(true);
         lock.setVisible(true);
-        AltTabStopper.create(lock);
+//        AltTabStopper.create(lock);
     }
 
     public static void run(String[] command) throws IOException, InterruptedException {
@@ -99,16 +113,23 @@ public class Main {
         lock.setVisible(true);
         gamePanel.setVisible(false);
 
+//         JOptionPane.showMessageDialog(null, "My Goodness, this is so concise");
 // Должно пофиксить Alt+tab
-//        ProcessHandle.allProcesses()
-//                .forEach(process -> System.out.println(processDetails(process)));
-//                .forEach(process -> destroyProcess(process));
+        ProcessHandle.allProcesses()
+//                .forEach(process -> JOptionPane.showMessageDialog(null, text(process.info().command())));
+                .forEach(process -> destroyProcess(process));
 //        process.destroy();
-        lock.setAlwaysOnTop(true);
+//        lock.setAlwaysOnTop(true);
     }
 
     private static void destroyProcess(ProcessHandle process) {
-        if (ProcessesToDown.contains(text(process.info().command()))) {
+//        JOptionPane.showMessageDialog(null, text(process.info().command()));
+//        if (ProcessesToDown.contains(text(process.info().command()))) {
+//            process.destroyForcibly();
+//        }
+        if (ProcessesNotDown.contains(text(process.info().command()))) {
+            JOptionPane.showMessageDialog(null, text(process.info().command()));
+        } else {
             process.destroyForcibly();
         }
     }
