@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 public class AltTabStopper implements Runnable
 {
     private boolean working = true;
+    private boolean blocked = true;
     private JFrame frame;
 
     public AltTabStopper(JFrame frame)
@@ -16,7 +17,11 @@ public class AltTabStopper implements Runnable
 
     public void stop()
     {
-        working = false;
+        blocked = false;
+    }
+    public void resume()
+    {
+        blocked = true;
     }
 
     public static AltTabStopper create(JFrame frame)
@@ -33,10 +38,14 @@ public class AltTabStopper implements Runnable
             Robot robot = new Robot();
             while (working)
             {
-                robot.keyRelease(KeyEvent.VK_ALT);
-                robot.keyRelease(KeyEvent.VK_TAB);
-                frame.requestFocus();
-                try { Thread.sleep(10); } catch(Exception e) {}
+                if (blocked) {
+                    robot.keyRelease(KeyEvent.VK_ALT);
+                    robot.keyRelease(KeyEvent.VK_TAB);
+//                frame.requestFocus();
+                    try { Thread.sleep(10); } catch(Exception e) {}
+                } else {
+                    try { Thread.sleep(500); } catch(Exception e) {}
+                }
             }
         } catch (Exception e) { e.printStackTrace(); System.exit(-1); }
     }

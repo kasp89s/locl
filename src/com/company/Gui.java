@@ -21,7 +21,7 @@ public class Gui extends JFrame {
         super("lock");
         getContentPane().setBackground(Color.BLACK);
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-//        this.setAlwaysOnTop(true);
+        this.setAlwaysOnTop(true);
         this.setResizable(false);
         this.setUndecorated(true);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -29,8 +29,9 @@ public class Gui extends JFrame {
         pack(); // Important line!!!
         initComponents();
         this.displayCodePanel();
-    }
 
+        this.setFocusable(true);
+    }
     private void initComponents() {
         Toolkit tk = Toolkit.getDefaultToolkit();
         int screenWidth = tk.getScreenSize().width;

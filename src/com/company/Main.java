@@ -5,7 +5,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.util.Optional;
 
 import java.io.BufferedReader;
@@ -41,7 +40,6 @@ public class Main {
             "C:\\Program Files\\NVIDIA Corporation\\NvContainer\\nvcontainer.exe"
     );
 
-    public static boolean working = true;
     public static Process process;
     public static Timer timer;
     public static TimerTask timerTask;
@@ -67,15 +65,18 @@ public class Main {
 
     public static String Logout = "/api/logout";
 
+    public static AltTabStopper stopper;
+
     public static void main(String[] args) {
         lock = new Gui();
         gamePanel = new GamePanel();
 
-
         System.out.println(ComputerInfo.getMacAddress());
 //        gamePanel.setVisible(true);
         lock.setVisible(true);
-//        AltTabStopper.create(lock);
+
+        stopper = new AltTabStopper(lock);
+        stopper.run();
     }
 
     public static void run(String[] command) throws IOException, InterruptedException {
@@ -89,14 +90,15 @@ public class Main {
         setGameTimer();
         lock.setVisible(false);
         gamePanel.setVisible(true);
+        stopper.stop();
     }
 
     public static void showLockPanel() {
         String jsonString = new JSONObject()
                 .put("code", CurrentCode)
                 .put("login", CurrentLogin)
+                .put("macAddress", ComputerInfo.getMacAddress())
                 .toString();
-
         try {
             httpPostRequest(Logout, jsonString);
         } catch (IOException e) {
@@ -112,12 +114,13 @@ public class Main {
 
         lock.setVisible(true);
         gamePanel.setVisible(false);
-
+//        stopper = new AltTabStopper(lock);
+        stopper.resume();
 //         JOptionPane.showMessageDialog(null, "My Goodness, this is so concise");
 // Должно пофиксить Alt+tab
-        ProcessHandle.allProcesses()
+//        ProcessHandle.allProcesses()
 //                .forEach(process -> JOptionPane.showMessageDialog(null, text(process.info().command())));
-                .forEach(process -> destroyProcess(process));
+//                .forEach(process -> destroyProcess(process));
 //        process.destroy();
 //        lock.setAlwaysOnTop(true);
     }
@@ -213,8 +216,10 @@ public class Main {
                 .put("code", CurrentCode)
                 .put("login", CurrentLogin)
                 .put("time", TimeLeft)
+                .put("macAddress", ComputerInfo.getMacAddress())
                 .toString();
 
+        System.out.println(jsonString);
         try {
             String r = httpPostRequest(UseTimeEndpoint, jsonString);
             try {
