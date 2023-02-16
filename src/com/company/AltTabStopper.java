@@ -42,6 +42,9 @@ public class AltTabStopper implements Runnable
                     robot.keyRelease(KeyEvent.VK_ALT);
                     robot.keyRelease(KeyEvent.VK_TAB);
 //                frame.requestFocus();
+                    if(!frame.isFocused()) {
+                        frame.requestFocus();
+                    }
                     try { Thread.sleep(10); } catch(Exception e) {}
                 } else {
                     try { Thread.sleep(500); } catch(Exception e) {}
