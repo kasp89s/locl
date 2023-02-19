@@ -696,8 +696,8 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "C:\\Game\\Crossout\\launcher.exe"
-//                    "D:\\Crossout\\launcher.exe"
+//                    "C:\\Game\\Crossout\\launcher.exe"
+                    "D:\\Crossout\\launcher.exe"
             };
             Main.run(params);
         } catch (IOException exception) {

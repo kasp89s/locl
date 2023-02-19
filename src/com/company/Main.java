@@ -238,7 +238,12 @@ public class Main {
 
     protected static void playSound(String timeLeft)
     {
-        new MP3Player(Main.class.getResource("/resources/" + timeLeft + "min.mp3")).play();
+        try {
+            new MP3Player(Main.class.getResource("/resources/" + timeLeft + "min_ua.mp3")).play();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+
     }
 
     public static String httpPostRequest(String url, String json) throws IOException, InterruptedException
