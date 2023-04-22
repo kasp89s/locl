@@ -889,7 +889,10 @@ public class GamePanel extends javax.swing.JFrame {
                 break;
             case "03700501": run = "D:\\Extended\\Need For Speed Heat\\NeedForSpeedHeat.exe";
                 break;
-
+            case "03700601": run = "D:\\Extended\\Command and Conquer - Generals\\Command and Conquer Generals\\generals.exe";
+                break;
+            case "03700602": run = "D:\\Extended\\Command and Conquer - Generals\\Command and Conquer Generals Zero Hour\\generals.exe";
+                break;
         }
         System.out.println(code);
 
