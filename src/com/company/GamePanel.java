@@ -903,7 +903,10 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    run
+                    "C:\\Windows\\System32\\runas.exe",
+                    "/savecred",
+                    "/user:DESKTOP-VK1BTGH\\Administrator",
+                    "\"" + run + "\""
             };
             Main.run(params);
         } catch (IOException exception) {
