@@ -19,7 +19,7 @@ public class GamePanel extends javax.swing.JFrame {
         this.setUndecorated(true);
         this.setBounds(0,0,screenWidth, screenHeight);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initComponents();
     }
 
@@ -29,6 +29,9 @@ public class GamePanel extends javax.swing.JFrame {
         TimeLeftMessage = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         LogOutButton = new javax.swing.JButton();
+
+        extendedInput = new javax.swing.JPasswordField();
+        extendedButton = new javax.swing.JButton();
 
         // GAMES
         Csgo = new javax.swing.JLabel();
@@ -53,6 +56,7 @@ public class GamePanel extends javax.swing.JFrame {
         Steam = new javax.swing.JLabel();
         EpicGames = new javax.swing.JLabel();
         BattleNet = new javax.swing.JLabel();
+
 
         Csgo.setBackground(new java.awt.Color(0, 0, 0));
         Csgo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -412,6 +416,19 @@ public class GamePanel extends javax.swing.JFrame {
             }
         });
 
+        extendedInput.setPreferredSize(new Dimension(64, 25));
+        extendedInput.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        extendedInput.setMargin(new Insets(-6, 0, 0, 0));
+        extendedButton.setText("#");
+        extendedButton.setToolTipText("");
+        extendedButton.setForeground(new java.awt.Color(255, 255, 255));
+        extendedButton.setContentAreaFilled(false);
+        extendedButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                extendedButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -479,7 +496,12 @@ public class GamePanel extends javax.swing.JFrame {
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(EpicGames)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(BattleNet)))
+                                                .addComponent(BattleNet))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(extendedInput)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(extendedButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                )
                                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -516,7 +538,12 @@ public class GamePanel extends javax.swing.JFrame {
                                         .addComponent(Steam)
                                         .addComponent(EpicGames)
                                         .addComponent(BattleNet))
-                                .addGap(0, 56, Short.MAX_VALUE))
+                                .addGap(0, 56, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(extendedInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(extendedButton))
+//                                .addGap(0, 560, Short.MAX_VALUE)
+                        )
         );
 
 //        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -831,6 +858,56 @@ public class GamePanel extends javax.swing.JFrame {
         }
     }
 
+    private void extendedButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+        String code = new String(extendedInput.getPassword());
+
+        String run = "";
+
+        switch (code) {
+            case "03700101": run = "D:\\Extended\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe";
+                break;
+            case "03700102": run = "D:\\Extended\\DOOMEternal\\DOOMEternalx64vk.exe";
+                break;
+            case "03700103": run = "D:\\Extended\\DOOM\\DOOMx64.exe";
+                break;
+            case "03700104": run = "D:\\Extended\\Metro Exodus\\MetroExodus.exe";
+                break;
+            case "03700105": run = "D:\\Extended\\Serious Sam Siberian Mayhem\\Bin\\x64\\SamSM.exe";
+                break;
+            case "03700106": run = "D:\\Extended\\Wolfenstein Youngblood\\Youngblood_x64vk.exe";
+                break;
+            case "03700202": run = "D:\\Extended\\RESIDENT EVIL 2\\re2.exe";
+                break;
+            case "03700203": run = "D:\\Extended\\RESIDENT.EVIL 3\\re3.exe";
+                break;
+            case "03700303": run = "D:\\Extended\\The Witcher 3 Wild Hunt\\bin\\x64\\witcher3.exe";
+                break;
+            case "03700401": run = "D:\\Extended\\Grand Theft Auto V\\GameLauncher.exe";
+                break;
+            case "03700402": run = "D:\\Extended\\Control\\Control.exe";
+                break;
+            case "03700501": run = "D:\\Extended\\Need For Speed Heat\\NeedForSpeedHeat.exe";
+                break;
+
+        }
+        System.out.println(code);
+
+        if (run.equals("")) {
+            return;
+        }
+
+        // TODO add your handling code here:
+        try {
+            String[] params = {
+                    run
+            };
+            Main.run(params);
+        } catch (IOException exception) {
+        } catch (InterruptedException exception) {
+        }
+    }
+
     private void LogOutButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         Main.showLockPanel();
@@ -868,5 +945,7 @@ public class GamePanel extends javax.swing.JFrame {
     private javax.swing.JLabel Wow;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton extendedButton;
+    private javax.swing.JPasswordField extendedInput;
     // End of variables declaration
 }
