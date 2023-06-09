@@ -865,33 +865,33 @@ public class GamePanel extends javax.swing.JFrame {
         String run = "";
 
         switch (code) {
-            case "03700101": run = "D:\\Extended\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe";
+            case "03700101": run = "C:\\Users\\Player\\Desktop\\cyberpunk2077.bat";
                 break;
-            case "03700102": run = "D:\\Extended\\DOOMEternal\\DOOMEternalx64vk.exe";
+            case "03700102": run = "C:\\Users\\Player\\Desktop\\doom_eth.bat";
                 break;
-            case "03700103": run = "D:\\Extended\\DOOM\\DOOMx64.exe";
+            case "03700103": run = "C:\\Users\\Player\\Desktop\\doom.bat";
                 break;
-            case "03700104": run = "D:\\Extended\\Metro Exodus\\MetroExodus.exe";
+            case "03700104": run = "C:\\Users\\Player\\Desktop\\MetroExodus.bat";
                 break;
-            case "03700105": run = "D:\\Extended\\Serious Sam Siberian Mayhem\\Bin\\x64\\SamSM.exe";
+            case "03700105": run = "C:\\Users\\Player\\Desktop\\SamSM.bat";
                 break;
-            case "03700106": run = "D:\\Extended\\Wolfenstein Youngblood\\Youngblood_x64vk.exe";
+            case "03700106": run = "C:\\Users\\Player\\Desktop\\Youngblood.bat";
                 break;
-            case "03700202": run = "D:\\Extended\\RESIDENT EVIL 2\\re2.exe";
+            case "03700202": run = "C:\\Users\\Player\\Desktop\\re2.bat";
                 break;
-            case "03700203": run = "D:\\Extended\\RESIDENT.EVIL 3\\re3.exe";
+            case "03700203": run = "C:\\Users\\Player\\Desktop\\re3.bat";
                 break;
-            case "03700303": run = "D:\\Extended\\The Witcher 3 Wild Hunt\\bin\\x64\\witcher3.exe";
+            case "03700303": run = "C:\\Users\\Player\\Desktop\\witcher3.bat";
                 break;
-            case "03700401": run = "D:\\Extended\\Grand Theft Auto V\\GameLauncher.exe";
+            case "03700401": run = "C:\\Users\\Player\\Desktop\\gta5.bat";
                 break;
-            case "03700402": run = "D:\\Extended\\Control\\Control.exe";
+            case "03700402": run = "C:\\Users\\Player\\Desktop\\Control.bat";
                 break;
-            case "03700501": run = "D:\\Extended\\Need For Speed Heat\\NeedForSpeedHeat.exe";
+            case "03700501": run = "C:\\Users\\Player\\Desktop\\NeedForSpeedHeat.bat";
                 break;
-            case "03700601": run = "D:\\Extended\\Command and Conquer - Generals\\Command and Conquer Generals\\generals.exe";
+            case "03700601": run = "C:\\Users\\Player\\Desktop\\generals.bat";
                 break;
-            case "03700602": run = "D:\\Extended\\Command and Conquer - Generals\\Command and Conquer Generals Zero Hour\\generals.exe";
+            case "03700602": run = "C:\\Users\\Player\\Desktop\\generals_zh.bat";
                 break;
         }
         System.out.println(code);
@@ -901,6 +901,14 @@ public class GamePanel extends javax.swing.JFrame {
         }
 
         // TODO add your handling code here:
+//        try {
+//            String[] params = {
+//                    run
+//            };
+//            Main.run(params);
+//        } catch (IOException exception) {
+//        } catch (InterruptedException exception) {
+//        }
         try {
             String[] params = {
                     "C:\\Windows\\System32\\runas.exe",
