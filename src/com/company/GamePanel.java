@@ -254,8 +254,8 @@ public class GamePanel extends javax.swing.JFrame {
         Crossout.setBackground(new java.awt.Color(0, 0, 0));
         Crossout.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Crossout.setForeground(new java.awt.Color(255, 255, 255));
-        Crossout.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("crossout_128.png"))); // NOI18N
-        Crossout.setText("Crossout");
+        Crossout.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("generals_128.png"))); // NOI18N
+        Crossout.setText("Generals");
         Crossout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Crossout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Crossout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -693,7 +693,7 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "D:\\Genshin Impact\\launcher.exe"
+                    "C:\\Users\\Player\\Desktop\\genshin.bat"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -737,7 +737,7 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "D:\\Extended\\The Witcher 3 Wild Hunt\\bin\\x64\\witcher3.exe"
+                    "C:\\Users\\Player\\Desktop\\witcher.bat"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -745,12 +745,16 @@ public class GamePanel extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * -== generals ==-
+     * @param evt
+     */
     private void CrossoutMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         try {
             String[] params = {
-//                    "C:\\Game\\Crossout\\launcher.exe"
-                    "D:\\Crossout\\launcher.exe"
+                    "C:\\Users\\Player\\Desktop\\generals.bat"
+//                    "D:\\Crossout\\launcher.exe"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -766,8 +770,7 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "C:\\Users\\Player\\AppData\\Local\\Discord\\Update.exe",
-                    "--processStart Discord.exe"
+                    "C:\\Users\\Player\\Desktop\\discord.bat"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -820,11 +823,15 @@ public class GamePanel extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Grand Theft Auto V
+     * @param evt
+     */
     private void WowMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "D:\\World of Warcraft\\World of Warcraft Launcher.exe"
+                    "D:\\Extended\\Grand Theft Auto V\\GameLauncher.exe"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -887,33 +894,9 @@ public class GamePanel extends javax.swing.JFrame {
         String run = "";
 
         switch (code) {
-            case "03700101": run = "C:\\Users\\Player\\Desktop\\cyberpunk2077.bat";
+            case "03700601": run = "D:\\Extended\\Command and Conquer - Generals\\Command and Conquer Generals\\generals.exe";
                 break;
-            case "03700102": run = "C:\\Users\\Player\\Desktop\\doom_eth.bat";
-                break;
-            case "03700103": run = "C:\\Users\\Player\\Desktop\\doom.bat";
-                break;
-            case "03700104": run = "C:\\Users\\Player\\Desktop\\MetroExodus.bat";
-                break;
-            case "03700105": run = "C:\\Users\\Player\\Desktop\\SamSM.bat";
-                break;
-            case "03700106": run = "C:\\Users\\Player\\Desktop\\Youngblood.bat";
-                break;
-            case "03700202": run = "C:\\Users\\Player\\Desktop\\re2.bat";
-                break;
-            case "03700203": run = "C:\\Users\\Player\\Desktop\\re3.bat";
-                break;
-            case "03700303": run = "C:\\Users\\Player\\Desktop\\witcher3.bat";
-                break;
-            case "03700401": run = "C:\\Users\\Player\\Desktop\\gta5.bat";
-                break;
-            case "03700402": run = "C:\\Users\\Player\\Desktop\\Control.bat";
-                break;
-            case "03700501": run = "C:\\Users\\Player\\Desktop\\NeedForSpeedHeat.bat";
-                break;
-            case "03700601": run = "C:\\Users\\Player\\Desktop\\generals.bat";
-                break;
-            case "03700602": run = "C:\\Users\\Player\\Desktop\\generals_zh.bat";
+            case "03700602": run = "D:\\Extended\\Command and Conquer - Generals\\Command and Conquer Generals Zero Hour\\generals.exe";
                 break;
         }
         System.out.println(code);
@@ -923,25 +906,25 @@ public class GamePanel extends javax.swing.JFrame {
         }
 
         // TODO add your handling code here:
-//        try {
-//            String[] params = {
-//                    run
-//            };
-//            Main.run(params);
-//        } catch (IOException exception) {
-//        } catch (InterruptedException exception) {
-//        }
         try {
             String[] params = {
-                    "C:\\Windows\\System32\\runas.exe",
-                    "/savecred",
-                    "/user:DESKTOP-VK1BTGH\\Administrator",
-                    "\"" + run + "\""
+                    run
             };
             Main.run(params);
         } catch (IOException exception) {
         } catch (InterruptedException exception) {
         }
+//        try {
+//            String[] params = {
+//                    "C:\\Windows\\System32\\runas.exe",
+//                    "/savecred",
+//                    "/user:DESKTOP-VK1BTGH\\Administrator",
+//                    "\"" + run + "\""
+//            };
+//            Main.run(params);
+//        } catch (IOException exception) {
+//        } catch (InterruptedException exception) {
+//        }
     }
 
     private void LogOutButtonActionPerformed(java.awt.event.ActionEvent evt) {
