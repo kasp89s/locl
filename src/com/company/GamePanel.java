@@ -151,8 +151,8 @@ public class GamePanel extends javax.swing.JFrame {
         Apex.setBackground(new java.awt.Color(0, 0, 0));
         Apex.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Apex.setForeground(new java.awt.Color(255, 255, 255));
-        Apex.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("21509-128x128x32.png"))); // NOI18N
-        Apex.setText("ApexLegends");
+        Apex.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("cs16_128.png"))); // NOI18N
+        Apex.setText("CS 1.6");
         Apex.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Apex.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Apex.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -180,8 +180,8 @@ public class GamePanel extends javax.swing.JFrame {
         Overwatch.setBackground(new java.awt.Color(0, 0, 0));
         Overwatch.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Overwatch.setForeground(new java.awt.Color(255, 255, 255));
-        Overwatch.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("21518-128x128x32.png"))); // NOI18N
-        Overwatch.setText("Overwatch");
+        Overwatch.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("minecraft_128.png"))); // NOI18N
+        Overwatch.setText("Minecraft");
         Overwatch.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Overwatch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Overwatch.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -209,8 +209,8 @@ public class GamePanel extends javax.swing.JFrame {
         Heartstone.setBackground(new java.awt.Color(0, 0, 0));
         Heartstone.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Heartstone.setForeground(new java.awt.Color(255, 255, 255));
-        Heartstone.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("heartstone_128.png"))); // NOI18N
-        Heartstone.setText("Heartstone");
+        Heartstone.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("roblox_128.png"))); // NOI18N
+        Heartstone.setText("Roblox");
         Heartstone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Heartstone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Heartstone.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -239,8 +239,8 @@ public class GamePanel extends javax.swing.JFrame {
         Diablo.setBackground(new java.awt.Color(0, 0, 0));
         Diablo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Diablo.setForeground(new java.awt.Color(255, 255, 255));
-        Diablo.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("diablo_128.png"))); // NOI18N
-        Diablo.setText("Diablo 2");
+        Diablo.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("the_witcher_128.png"))); // NOI18N
+        Diablo.setText("Witcher 3");
         Diablo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Diablo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Diablo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -299,8 +299,8 @@ public class GamePanel extends javax.swing.JFrame {
         Warships.setBackground(new java.awt.Color(0, 0, 0));
         Warships.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Warships.setForeground(new java.awt.Color(255, 255, 255));
-        Warships.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("ship_128.png"))); // NOI18N
-        Warships.setText("Warships");
+        Warships.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("gta_vice_city_128.png"))); // NOI18N
+        Warships.setText("Vice City");
         Warships.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Warships.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Warships.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -314,8 +314,8 @@ public class GamePanel extends javax.swing.JFrame {
         Blitz.setBackground(new java.awt.Color(0, 0, 0));
         Blitz.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Blitz.setForeground(new java.awt.Color(255, 255, 255));
-        Blitz.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("blitz_128.png"))); // NOI18N
-        Blitz.setText("Blitz");
+        Blitz.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("gta-san_128.png"))); // NOI18N
+        Blitz.setText("Sun Andreas");
         Blitz.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Blitz.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Blitz.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -329,8 +329,8 @@ public class GamePanel extends javax.swing.JFrame {
         Wow.setBackground(new java.awt.Color(0, 0, 0));
         Wow.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Wow.setForeground(new java.awt.Color(255, 255, 255));
-        Wow.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("21526-128x128x32.png"))); // NOI18N
-        Wow.setText("WoW");
+        Wow.setIcon(new javax.swing.ImageIcon(getClass().getClassLoader().getResource("gta_v_128.png"))); // NOI18N
+        Wow.setText("GTA 5");
         Wow.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Wow.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Wow.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -621,10 +621,9 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "C:\\Windows\\System32\\runas.exe",
-                    "/savecred",
-                    "/user:DESKTOP-VK1BTGH\\Administrator",
-                    "\"D:\\Riot Games\\Riot Client\\RiotClientServices.exe --launch-product=valorant --launch-patchline=live\""
+                    "D:\\Riot Games\\Riot Client\\RiotClientServices.exe",
+                    "--launch-product=valorant",
+                    "--launch-patchline=live"
             };
 
             Main.run(params);
@@ -636,21 +635,37 @@ public class GamePanel extends javax.swing.JFrame {
     private void ApexMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         try {
-            java.net.URI url = new java.net.URI("steam://rungameid/1172470");
-            java.awt.Desktop.getDesktop().browse(url);
+            String[] params = {
+                    "D:\\Extended\\Counter-Strike 1.6\\hl.exe",
+                    "-noforcemparms",
+                    "-noforcemaccel",
+                    "-noforcemspd",
+                    "-language ru"
+            };
+
+            Main.run(params);
         } catch (IOException exception) {
-        } catch (URISyntaxException exception) {
+        } catch (InterruptedException exception) {
         }
     }
+//
+//    private void ApexMouseClicked(java.awt.event.MouseEvent evt) {
+//        // TODO add your handling code here:
+//        try {
+//            java.net.URI url = new java.net.URI("steam://rungameid/1172470");
+//            java.awt.Desktop.getDesktop().browse(url);
+//        } catch (IOException exception) {
+//        } catch (URISyntaxException exception) {
+//        }
+//    }
 
     private void LolMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "C:\\Windows\\System32\\runas.exe",
-                    "/savecred",
-                    "/user:DESKTOP-VK1BTGH\\Administrator",
-                    "\"D:\\Riot Games\\Riot Client\\RiotClientServices.exe --launch-product=league_of_legends --launch-patchline=live\""
+                    "D:\\Riot Games\\Riot Client\\RiotClientServices.exe",
+                    "--launch-product=league_of_legends",
+                    "--launch-patchline=live"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -658,11 +673,15 @@ public class GamePanel extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * ==Minecraft==
+     * @param evt
+     */
     private void OverwatchMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "D:\\Overwatch\\Overwatch Launcher.exe"
+                    "C:\\Users\\Player\\AppData\\Roaming\\.minecraft\\TLauncher.exe"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -674,21 +693,24 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "C:\\Windows\\System32\\runas.exe",
-                    "/savecred",
-                    "/user:DESKTOP-VK1BTGH\\Administrator",
-                    "\"D:\\Genshin Impact\\launcher.exe\""
+                    "D:\\Genshin Impact\\launcher.exe"
             };
             Main.run(params);
         } catch (IOException exception) {
         } catch (InterruptedException exception) {
         }
     }
+
+    /**
+     * ==Roblox==
+     * @param evt
+     */
     private void HeartstoneMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "D:\\Hearthstone\\Hearthstone Beta Launcher.exe"
+                    "C:\\Users\\Player\\AppData\\Local\\Roblox\\Versions\\version-21bedf9513a74867\\RobloxPlayerLauncher.exe",
+                    "-app"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -707,11 +729,15 @@ public class GamePanel extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * == the_witcher_128 ==
+     * @param evt
+     */
     private void DiabloMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "D:\\Diablo II Resurrected\\Diablo II Resurrected Launcher.exe"
+                    "D:\\Extended\\The Witcher 3 Wild Hunt\\bin\\x64\\witcher3.exe"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -732,14 +758,16 @@ public class GamePanel extends javax.swing.JFrame {
         }
     }
 
+    /**
+     *  == Discord ==
+     * @param evt
+     */
     private void WarThunderMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "C:\\Windows\\System32\\runas.exe",
-                    "/savecred",
-                    "/user:DESKTOP-VK1BTGH\\Administrator",
-                    "\"C:\\Game\\Discord\\Update.exe --processStart Discord.exe\""
+                    "C:\\Users\\Player\\AppData\\Local\\Discord\\Update.exe",
+                    "--processStart Discord.exe"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -751,10 +779,8 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "C:\\Windows\\System32\\runas.exe",
-                    "/savecred",
-                    "/user:DESKTOP-VK1BTGH\\Administrator",
-                    "\"D:\\Games\\World_of_Tanks_EU\\wgc_api.exe --open\""
+                    "D:\\World_of_Tanks_EU\\wgc_api.exe",
+                    "--open"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -762,14 +788,15 @@ public class GamePanel extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * == GTA Vice City==
+     * @param evt
+     */
     private void WarshipsMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "C:\\Windows\\System32\\runas.exe",
-                    "/savecred",
-                    "/user:DESKTOP-VK1BTGH\\Administrator",
-                    "\"D:\\World_of_Warships\\wgc_api.exe --open\""
+                    "D:\\Extended\\Grand.Theft.Auto.The.Trilogy.The.Definitive.Edition.RGL.Rip-InsaneRamZes\\GTA Vice City - Definitive Edition\\Gameface\\Binaries\\Win64\\ViceCity.exe"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -777,14 +804,15 @@ public class GamePanel extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * == GTA San Andreas ==
+     * @param evt
+     */
     private void BlitzMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "C:\\Windows\\System32\\runas.exe",
-                    "/savecred",
-                    "/user:DESKTOP-VK1BTGH\\Administrator",
-                    "\"D:\\World_of_Tanks_Blitz\\wgc_api.exe --open\""
+                    "D:\\Extended\\Grand.Theft.Auto.The.Trilogy.The.Definitive.Edition.RGL.Rip-InsaneRamZes\\GTA San Andreas - Definitive Edition\\Gameface\\Binaries\\Win64\\SanAndreas.exe"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -808,7 +836,7 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "D:\\steam\\steam.exe"
+                    "C:\\Program Files (x86)\\Steam\\Steam.exe"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -820,10 +848,7 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "C:\\Windows\\System32\\runas.exe",
-                    "/savecred",
-                    "/user:DESKTOP-VK1BTGH\\Administrator",
-                    "\"D:\\EpicGames\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe\""
+                    "C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe"
             };
             Main.run(params);
         } catch (IOException exception) {
@@ -847,10 +872,7 @@ public class GamePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String[] params = {
-                    "C:\\Windows\\System32\\runas.exe",
-                    "/savecred",
-                    "/user:DESKTOP-VK1BTGH\\Administrator",
-                    "\"D:\\EpicGames\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe\""
+                    "C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe",
             };
             Main.run(params);
         } catch (IOException exception) {
